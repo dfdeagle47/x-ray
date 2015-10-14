@@ -186,6 +186,8 @@ function Xray() {
             var pending = $scope.length;
             var out = [];
 
+            if(pending === 0) return next(null, compact(out));
+
             $scope.each(function(i, el) {
               var $innerscope = $scope.eq(i);
               var node = xray(scope, v[0]);
